@@ -3,7 +3,6 @@
 int gcd(int x, int y) {   //Greatest Common Diviser Function
     if (y == 0) {
 
-        printf("Undefined Buddy.");
         return x;    //Anything divided by 0 is undefined
     }
     else {
