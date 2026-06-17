@@ -7,7 +7,18 @@ double *createScores(size_t count){
     return new_memory;
 }
 
+void readScores(double scores[], size_t count){
 
+    size_t x = 0;
+
+    while (x < count){
+
+        printf("Enter score(s) %zu :", x + 1);
+        scanf("%lf", &scores[x]);
+
+        x = x + 1;
+    }
+}
 
 
 
