@@ -55,6 +55,38 @@ double findMinimum(const double scores[], size_t count) {
     return min;
 }
 
+double findMaximum(const double scores[], size_t count) {
+ 
+    double max = scores[0];
+    size_t x = 1;
+    
+    while (x < count) {
+        if (scores[x] > max) {
+            
+            max = scores[x];
+        }
+        else {
+            
+        }
+        x = x + 1;
+    }
+    return max;
+}
+
+double calculateAverage(const double scores[], size_t count) {
+    
+    double sum = 0.0;
+    size_t x = 0;
+    
+    while (x < count) {
+
+        sum = sum + scores[x]; 
+        x = x + 1;
+    }
+    
+    return sum / count; 
+}
+
 int main(void){
 
 int inputsize = 0;
