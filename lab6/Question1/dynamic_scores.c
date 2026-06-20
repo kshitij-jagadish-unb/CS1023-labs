@@ -74,7 +74,7 @@ double findMaximum(const double scores[], size_t count) {
 }
 
 double calculateAverage(const double scores[], size_t count) {
-    
+
     double sum = 0.0;
     size_t x = 0;
     
@@ -96,13 +96,50 @@ printf("How many scores you wanna enter?");
 scanf("%d", &inputsize);
 incheck = inputsize;
 
-if(incheck < 1){
+if (incheck != 1) {
 
-    printf("Enter a positive number of scores >:| ");
+        printf("Error: You did not enter a valid number.\n");
+        return 1; 
+    } 
+    else if (inputsize <= 0) {
+        printf("Error: Invalid size. You must enter a number greater than zero.\n");
+        return 1;
+    }
+    else {
+        
+        size_t count = (size_t)inputsize;
 
-    return 1;
+ 
+        double *scores = createScores(count);
+        
+     
+        if (scores == NULL) {
+            printf("Error: Memory allocation failed.\n");
+            return 1;
+        }
+        else {
+            
+            readScores(scores, count);
+
+            printf("\n--- Results ---\n");
+            
+          
+            printScores(scores, count);
+
+           
+            double min_score = findMinimum(scores, count);
+            double max_score = findMaximum(scores, count);
+            double avg_score = calculateAverage(scores, count);
+
+            printf("Minimum score: %.2f\n", min_score);
+            printf("Maximum score: %.2f\n", max_score);
+            printf("Average score: %.2f\n", avg_score);
+
+            
+            free(scores);
+        }
+    }
+    
+    return 0; 
+
 }
-
-    return 0;
-}
-
