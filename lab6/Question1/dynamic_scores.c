@@ -36,6 +36,25 @@ void printScores(const double scores[], size_t count){
     
 }
 
+double findMinimum(const double scores[], size_t count) {
+   
+    double min = scores[0]; 
+    size_t x = 1; 
+    
+    while (x < count) {
+
+        if (scores[x] < min) {
+            
+            min = scores[x];
+        } 
+        else {
+           
+        }
+        x = x + 1;
+    }
+    return min;
+}
+
 int main(void){
 
 int inputsize = 0;
