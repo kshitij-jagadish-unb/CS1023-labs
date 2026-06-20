@@ -20,12 +20,21 @@ void readScores(double scores[], size_t count){
     }
 }
 
+void printScores(const double scores[], size_t count){
 
+    size_t x = 0;
 
+    printf("Score(s) entered are: ");
+    
+    while (x < count){
 
+        printf("%.2f", scores[x]);
 
-
-
+        x = x + 1;
+    }
+    printf("\n");
+    
+}
 
 int main(void){
 
